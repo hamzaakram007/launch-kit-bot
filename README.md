@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Launch Kit Bot
 
-## Getting Started
+Neutral **Discord launch-server kit** SaaS — spoiler roles, FAQ buttons, tip-of-day, countdown, and scam-link warn stubs.
 
-First, run the development server:
+Independent product by **Hamza Akram**. Not affiliated with Discord Inc., Rockstar Games, Take-Two, Sony, or Microsoft. No official game assets. No RMT or leak tools.
+
+## Live
+
+- Site: https://launch-kit-bot.vercel.app
+- Repo: https://github.com/hamzaakram007/launch-kit-bot
+
+## What’s in this repo
+
+| Path | What |
+| --- | --- |
+| `src/` | Next.js marketing site + dashboard mock |
+| `bot/` | Discord.js scaffold (`/setup`, `/countdown`, `/faq`, scam-warn) |
+
+## Pricing (MVP)
+
+| Plan | Price | Includes |
+| --- | --- | --- |
+| **Free** | $0 | Countdown + 1 FAQ + `/setup` |
+| **Server seat** | **$9/mo per Discord server** | Full modules (roles, 5 FAQs, tip-of-day, scam-warn, Stripe portal stub) |
+
+Billed per server, not per user. Typical seat range discussed for the product: $5–$20/mo. Stripe is stubbed — no live charges yet.
+
+## Web (Vercel)
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Bot setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Create a Discord application + bot; copy token and client ID. Enable **Message Content Intent** for scam-warn.
+2. `cd bot && npm install`
+3. Export env and register commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+export DISCORD_TOKEN=...
+export CLIENT_ID=...
+# optional fast guild sync:
+export GUILD_ID=...
+npm run register
+npm start
+```
 
-## Learn More
+4. Invite with Manage Roles + Send Messages + Use Application Commands.
+5. In Discord: `/setup` → `/countdown set when:2026-12-01T00:00:00Z` → `/faq`.
 
-To learn more about Next.js, take a look at the following resources:
+Keep the bot process on a small VPS/Fly. Vercel only hosts the marketing site + dashboard mock.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+More detail: [`bot/README.md`](./bot/README.md) and the on-site **Setup** section.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT — see [LICENSE](./LICENSE).

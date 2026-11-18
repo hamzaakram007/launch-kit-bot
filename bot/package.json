@@ -1,0 +1,17 @@
+{
+  "name": "launch-kit-bot-discord",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Discord.js scaffold for Launch Kit Bot — stubs only until tokens are set.",
+  "scripts": {
+    "start": "node src/index.js",
+    "register": "node src/register-commands.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "discord.js": "^14.22.1"
+  }
+}

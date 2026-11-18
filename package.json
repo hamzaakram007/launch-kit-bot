@@ -2,6 +2,7 @@
   "name": "launch-kit-bot",
   "version": "0.1.0",
   "private": true,
+  "description": "Neutral Discord launch-kit bot SaaS landing + Discord.js scaffold",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
