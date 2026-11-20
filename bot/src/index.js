@@ -1,5 +1,5 @@
 /**
- * Launch Kit Bot — Discord.js scaffold (high-level MVP).
+ * Launch Kit Bot — Discord.js bot runtime for NeonGulf.
  * Set DISCORD_TOKEN + CLIENT_ID before running. No publisher IP.
  */
 

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://launch-kit-bot.vercel.app";
+  const base = "https://bot.neongulf.com";
   return [
     {
       url: base,

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://launch-kit-bot.vercel.app/sitemap.xml",
+    sitemap: "https://bot.neongulf.com/sitemap.xml",
   };
 }
