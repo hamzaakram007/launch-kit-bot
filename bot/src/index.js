@@ -54,7 +54,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
   } catch (err) {
     console.error("[launch-kit-bot] command error", err);
     const payload = {
-      content: "Something went wrong running that command stub.",
+      content: "Something went wrong running that command.",
       flags: MessageFlags.Ephemeral,
     };
     if (interaction.replied || interaction.deferred) {
@@ -73,5 +73,5 @@ client.on(Events.MessageCreate, async (message) => {
 if (token) {
   client.login(token);
 } else {
-  console.log("[launch-kit-bot] stubs loaded. Commands: /setup /countdown /faq + scam-warn listener.");
+  console.log("[launch-kit-bot] commands loaded. Commands: /setup /countdown /faq + scam-warn listener.");
 }

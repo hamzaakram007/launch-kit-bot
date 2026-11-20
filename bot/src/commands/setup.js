@@ -33,7 +33,7 @@ export async function handleSetup(interaction) {
     } catch {
       await interaction.reply({
         content:
-          "Could not create Spoiler-OK role (missing Manage Roles?). Role/channel stubs documented in README.",
+          "Could not create Spoiler-OK role (missing Manage Roles?). See the README for required permissions.",
         flags: MessageFlags.Ephemeral,
       });
       return;
@@ -42,10 +42,10 @@ export async function handleSetup(interaction) {
 
   await interaction.reply({
     content: [
-      `Setup stub complete.`,
+      `Setup complete.`,
       `Role ready: **${role.name}** (\`${role.id}\`).`,
       `Next: create a spoiler channel and deny @everyone view, allow Spoiler-OK.`,
-      `FAQ + countdown modules stay off until toggled in the dashboard stub.`,
+      `FAQ + countdown modules stay off until toggled in the dashboard.`,
     ].join("\n"),
     flags: MessageFlags.Ephemeral,
   });

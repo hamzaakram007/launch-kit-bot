@@ -19,7 +19,7 @@ export async function handleCountdown(interaction) {
     }
     countdowns.set(guildId, ts);
     await interaction.reply({
-      content: `Countdown stub set to <t:${Math.floor(ts / 1000)}:F> (<t:${Math.floor(ts / 1000)}:R>).`,
+      content: `Countdown set to <t:${Math.floor(ts / 1000)}:F> (<t:${Math.floor(ts / 1000)}:R>).`,
     });
     return;
   }

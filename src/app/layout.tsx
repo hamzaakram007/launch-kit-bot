@@ -14,10 +14,10 @@ const figtree = Figtree({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = "https://launch-kit-bot.vercel.app";
+const siteUrl = "https://bot.neongulf.com";
 const title = "Launch Kit Bot — Neutral Discord launch-server kit";
 const description =
-  "SaaS Discord bot for gaming servers: spoiler roles, FAQ buttons, tip-of-day, countdown, and scam-link warnings. Free tier + $9/mo per server. Independent — no publisher IP.";
+  "NeonGulf Discord launch kit for gaming servers: spoiler roles, FAQ buttons, tip-of-day, countdown, and scam-link warnings. Free tier + $9/mo per server. Independent — no publisher IP.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

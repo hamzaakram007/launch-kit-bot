@@ -57,7 +57,7 @@ export async function handleFaq(interaction) {
   collector.on("collect", async (btn) => {
     const item = FAQ.find((f) => f.id === btn.customId);
     await btn.reply({
-      content: item?.answer ?? "Unknown FAQ stub.",
+      content: item?.answer ?? "Unknown FAQ item.",
       flags: MessageFlags.Ephemeral,
     });
   });

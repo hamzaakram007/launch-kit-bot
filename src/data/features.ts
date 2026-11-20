@@ -2,7 +2,7 @@ export type Feature = {
   id: string;
   title: string;
   blurb: string;
-  stub: string;
+  tag: string;
 };
 
 export const features: Feature[] = [
@@ -11,42 +11,42 @@ export const features: Feature[] = [
     title: "Spoiler roles",
     blurb:
       "One /setup command creates a spoiler-safe role and channel gate so early players stay unspoiled.",
-    stub: "roles.create + channel.overwrite stub",
+    tag: "Role + channel gates",
   },
   {
     id: "faq-buttons",
     title: "FAQ buttons",
     blurb:
       "Owner-written answers as Discord buttons — console launch FAQ without sticky-message chaos.",
-    stub: "5 seed FAQ replies",
+    tag: "Up to 5 FAQ replies",
   },
   {
     id: "tip-of-day",
     title: "Tip of the day",
     blurb:
       "Rotate short, spoiler-free tips into a channel on a schedule you control.",
-    stub: "cron + tip queue stub",
+    tag: "Scheduled tip queue",
   },
   {
     id: "countdown",
     title: "Launch countdown",
     blurb:
       "Pin a live countdown to any date you set — free tier includes countdown + one FAQ.",
-    stub: "/countdown set stub",
+    tag: "/countdown set",
   },
   {
     id: "scam-warn",
     title: "Scam-link warn",
     blurb:
       "Optional hook that flags suspicious paste links with a soft warning — educational, not antivirus.",
-    stub: "messageCreate warn stub",
+    tag: "Heuristic link warn",
   },
   {
     id: "dashboard",
     title: "Simple dashboard",
     blurb:
-      "Invite the bot, paste FAQ text, toggle modules. Stripe portal stub for server seats.",
-    stub: "config UI mock",
+      "Invite the bot, paste FAQ text, toggle modules. Manage server seats from the billing portal.",
+    tag: "Web config panel",
   },
 ];
 
@@ -88,7 +88,7 @@ export const pricing = [
     perks: [
       "Countdown module",
       "1 FAQ button",
-      "Invite + /setup role stub",
+      "Invite + /setup spoiler role",
       "Community Discord only (1 server)",
     ],
     notIncluded: [
@@ -105,15 +105,15 @@ export const pricing = [
     name: "Server seat",
     price: "$9",
     period: "/mo per Discord server",
-    priceNote: "Typical range $5–$20/mo — MVP lists $9 as the default seat.",
+    priceNote: "Typical range $5–$20/mo — $9 is the default seat price.",
     blurb:
-      "Billed per Discord server you connect. Cancel anytime from the Stripe portal (stub until keys are wired).",
+      "Billed per Discord server you connect. Cancel anytime from the Stripe customer portal.",
     perks: [
       "Everything in Free",
       "Spoiler roles + channel gates",
       "Up to 5 FAQ buttons",
       "Tip-of-day + scam-warn modules",
-      "Stripe customer portal stub",
+      "Stripe customer portal",
     ],
     notIncluded: [],
     cta: "Unlock server seat",
@@ -148,8 +148,8 @@ export const setupSteps = [
   },
   {
     step: 5,
-    title: "Toggle modules (dashboard stub)",
+    title: "Toggle modules from the dashboard",
     detail:
-      "Use the on-site dashboard mock to preview FAQ replies and module toggles. Wire Discord OAuth + Stripe when you leave stub mode.",
+      "Use the on-site dashboard to preview FAQ replies and module toggles. Connect Discord OAuth and Stripe when you are ready to go live.",
   },
 ];

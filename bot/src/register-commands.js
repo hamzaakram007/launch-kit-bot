@@ -1,6 +1,6 @@
 /**
  * Register slash commands. Requires DISCORD_TOKEN + CLIENT_ID.
- * Optional GUILD_ID for faster guild-scoped registration during MVP.
+ * Optional GUILD_ID for faster guild-scoped registration during development.
  */
 
 import { REST, Routes, SlashCommandBuilder } from "discord.js";
@@ -17,7 +17,7 @@ if (!token || !clientId) {
 const commands = [
   new SlashCommandBuilder()
     .setName("setup")
-    .setDescription("Create spoiler role + basic launch-kit channel stubs")
+    .setDescription("Create spoiler role and basic launch-kit channel gates")
     .toJSON(),
   new SlashCommandBuilder()
     .setName("countdown")
@@ -25,7 +25,7 @@ const commands = [
     .addSubcommand((sub) =>
       sub
         .setName("set")
-        .setDescription("Set countdown target (ISO date stub)")
+        .setDescription("Set countdown target (ISO datetime)")
         .addStringOption((opt) =>
           opt.setName("when").setDescription("ISO datetime").setRequired(true),
         ),

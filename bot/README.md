@@ -1,8 +1,8 @@
-# Launch Kit Bot (Discord scaffold)
+# Launch Kit Bot (Discord)
 
-Neutral Discord launch-server kit — **not** an official publisher bot.
+Neutral Discord launch-server kit by NeonGulf — **not** an official publisher bot.
 
-## Commands (stubs)
+## Commands
 
 | Command | Purpose |
 | --- | --- |
@@ -28,4 +28,4 @@ Without `DISCORD_TOKEN`, `npm start` prints dry-run guidance and exits the login
 
 ## Hosting note
 
-Keep the bot process on a small VPS/Fly. The Next.js site on Vercel is the SaaS landing + dashboard mock only.
+Keep the bot process on a small VPS/Fly. The Next.js site on Vercel is the NeonGulf SaaS landing + dashboard preview.

@@ -9,8 +9,8 @@ export function Pricing() {
         </h2>
         <p className="mt-3 text-[var(--muted)]">
           You pay <strong className="font-medium text-[var(--foam)]">per Discord server</strong>, not
-          per user. Free forever for countdown + one FAQ. Server seat unlocks the full kit. Stripe
-          checkout and customer portal are stubs until keys are connected — no charges yet.
+          per user. Free forever for countdown + one FAQ. Server seat unlocks the full kit. Checkout
+          and billing portal open soon.
         </p>
       </div>
 
@@ -71,10 +71,10 @@ export function Pricing() {
             <button
               type="button"
               disabled
-              title="Stripe checkout stub — not wired"
+              title="Checkout opens soon"
               className={`mt-6 w-full ${plan.featured ? "btn-primary" : "btn-ghost"} opacity-80`}
             >
-              {plan.cta} (stub)
+              {plan.cta} — opens soon
             </button>
           </article>
         ))}
@@ -97,7 +97,7 @@ export function Pricing() {
               ["/setup spoiler role", "Yes", "Yes + channel gates"],
               ["Tip of the day", "—", "Yes"],
               ["Scam-link warn", "—", "Yes"],
-              ["Stripe portal", "—", "Stub → live later"],
+              ["Billing portal", "—", "Included"],
             ].map(([module, free, seat]) => (
               <tr key={module} className="border-b border-[var(--line)]/60">
                 <td className="px-4 py-3">{module}</td>

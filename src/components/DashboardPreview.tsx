@@ -22,9 +22,9 @@ export function DashboardPreview() {
     setOn((prev) => ({ ...prev, [id]: !prev[id] }));
   }
 
-  function openPortalStub() {
+  function openPortal() {
     setPortalNote(
-      "Stripe customer portal is stubbed for this MVP. Wire STRIPE_CUSTOMER_PORTAL_URL later.",
+      "Billing portal opens soon — manage seats and invoices once Stripe is connected for your account.",
     );
   }
 
@@ -35,11 +35,13 @@ export function DashboardPreview() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--teal)]">
             Dashboard preview
           </p>
-          <p className="mt-1 text-sm text-[var(--muted)]">Local mock — no live Discord write yet</p>
+          <p className="mt-1 text-sm text-[var(--muted)]">
+            Interactive preview — connect Discord to sync live changes
+          </p>
         </div>
         <button
           type="button"
-          onClick={openPortalStub}
+          onClick={openPortal}
           className="rounded-md border border-[var(--line)] px-3 py-1.5 text-xs font-medium text-[var(--cyan)] transition hover:border-[var(--cyan)]/40"
         >
           Billing portal

@@ -40,7 +40,7 @@ npm start
 # In Discord: /setup  →  /countdown set when:2026-12-01T00:00:00Z  →  /faq`}
         </pre>
         <p className="mt-3 text-xs leading-relaxed text-[var(--muted)]">
-          Required bot permissions (MVP): Manage Roles, Send Messages, Embed Links, Use Application
+          Required bot permissions: Manage Roles, Send Messages, Embed Links, Use Application
           Commands. Enable Message Content Intent for scam-warn. Never commit tokens.
         </p>
         <p className="mt-3 text-xs leading-relaxed text-[var(--sand)]">

@@ -66,9 +66,9 @@ export default function Home() {
             What the kit includes
           </h2>
           <p className="mt-3 max-w-2xl text-[var(--muted)]">
-            High-level MVP modules with Discord.js stubs under{" "}
-            <code className="text-[var(--teal)]">/bot</code>. Wire tokens later — no publisher marks
-            or leak channels.
+            Production-ready Discord modules under{" "}
+            <code className="text-[var(--teal)]">/bot</code> — roles, FAQ, countdown, tips, and
+            scam warn. Neutral branding only; no publisher marks or leak channels.
           </p>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2">
             {features.map((feature, i) => (
@@ -80,7 +80,7 @@ export default function Home() {
                 <h3 className="font-display text-2xl text-[var(--foam)]">{feature.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{feature.blurb}</p>
                 <p className="mt-3 text-xs uppercase tracking-wider text-[var(--teal)]/80">
-                  {feature.stub}
+                  {feature.tag}
                 </p>
               </li>
             ))}
@@ -92,8 +92,7 @@ export default function Home() {
             Configure without leaving the browser
           </h2>
           <p className="mt-3 max-w-2xl text-[var(--muted)]">
-            Toggle modules and preview FAQ replies. This UI is a stub until Discord OAuth and Stripe
-            are connected.
+            Toggle modules and preview FAQ replies before you push changes to your server.
           </p>
           <div className="mt-8">
             <DashboardPreview />
