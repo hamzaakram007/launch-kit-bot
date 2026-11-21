@@ -1,24 +1,27 @@
-import { MessageFlags, PermissionFlagsBits } from "discord.js";
+import { PermissionFlagsBits } from "discord.js";
+import { replyError, replyEphemeral } from "../lib/replies.js";
 
 /**
- * High-level /setup stub: creates a Spoiler-OK role when the bot has Manage Roles.
- * Channel overwrite wiring can be expanded later.
+ * /setup — create Spoiler-OK role when the bot has Manage Roles.
  */
 export async function handleSetup(interaction) {
   if (!interaction.memberPermissions?.has(PermissionFlagsBits.ManageGuild)) {
-    await interaction.reply({
-      content: "You need Manage Server to run /setup.",
-      flags: MessageFlags.Ephemeral,
-    });
+    await replyError(interaction, "You need **Manage Server** to run `/setup`.");
     return;
   }
 
   const guild = interaction.guild;
   if (!guild) {
-    await interaction.reply({
-      content: "Setup only works inside a server.",
-      flags: MessageFlags.Ephemeral,
-    });
+    await replyError(interaction, "Setup only works inside a server.");
+    return;
+  }
+
+  const me = guild.members.me;
+  if (!me?.permissions.has(PermissionFlagsBits.ManageRoles)) {
+    await replyError(
+      interaction,
+      "I need the **Manage Roles** permission. Re-invite with that permission, then try again.",
+    );
     return;
   }
 
@@ -30,23 +33,23 @@ export async function handleSetup(interaction) {
         reason: "Launch Kit Bot /setup — spoiler-safe self-assign role",
         mentionable: false,
       });
-    } catch {
-      await interaction.reply({
-        content:
-          "Could not create Spoiler-OK role (missing Manage Roles?). See the README for required permissions.",
-        flags: MessageFlags.Ephemeral,
-      });
+    } catch (err) {
+      console.error("[launch-kit-bot] role create failed", err);
+      await replyError(
+        interaction,
+        "Could not create the Spoiler-OK role. Check my role is above new roles and I have Manage Roles.",
+      );
       return;
     }
   }
 
-  await interaction.reply({
-    content: [
+  await replyEphemeral(
+    interaction,
+    [
       `Setup complete.`,
       `Role ready: **${role.name}** (\`${role.id}\`).`,
-      `Next: create a spoiler channel and deny @everyone view, allow Spoiler-OK.`,
-      `FAQ + countdown modules stay off until toggled in the dashboard.`,
+      `Next: create a spoiler channel → deny @everyone View Channel → allow Spoiler-OK.`,
+      `Then try \`/countdown set\`, \`/faq\`, and \`/tip show\`.`,
     ].join("\n"),
-    flags: MessageFlags.Ephemeral,
-  });
+  );
 }

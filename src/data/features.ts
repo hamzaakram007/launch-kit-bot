@@ -24,8 +24,8 @@ export const features: Feature[] = [
     id: "tip-of-day",
     title: "Tip of the day",
     blurb:
-      "Rotate short, spoiler-free tips into a channel on a schedule you control.",
-    tag: "Scheduled tip queue",
+      "Rotate short, spoiler-free tips with /tip show — mods can /tip add their own lines.",
+    tag: "/tip show · /tip add",
   },
   {
     id: "countdown",
@@ -126,30 +126,30 @@ export const setupSteps = [
     step: 1,
     title: "Create a Discord application",
     detail:
-      "In the Discord Developer Portal, create an app → Bot. Copy the bot token and application (client) ID. Enable Message Content Intent if you want scam-warn.",
+      "Discord Developer Portal → New Application → Bot. Copy the bot token and Application ID (CLIENT_ID). Enable Message Content Intent only if you want scam-warn.",
   },
   {
     step: 2,
-    title: "Clone and install the bot package",
+    title: "Host the bot process (not Vercel)",
     detail:
-      "From this repo: `cd bot && npm install`. Keep the Next.js site on Vercel; run the bot on a small VPS or Fly.io process.",
+      "Vercel hosts this landing page only. Run `cd bot && npm install` on a small VPS or Fly.io. Put secrets in the host env — never in git.",
   },
   {
     step: 3,
-    title: "Export env vars and register slash commands",
+    title: "Set bot env vars and register commands",
     detail:
-      "`export DISCORD_TOKEN=… CLIENT_ID=…` (optional `GUILD_ID` for fast guild sync). Then `npm run register`.",
+      "Required: DISCORD_TOKEN, CLIENT_ID. Optional: GUILD_ID (fast guild sync), SCAM_WARN_ENABLED, FAQ_MAX, COMMAND_COOLDOWN_SECONDS. Then `npm run register`.",
   },
   {
     step: 4,
-    title: "Start the bot and run /setup",
+    title: "Invite, start, run /setup",
     detail:
-      "`npm start`, invite the bot with Manage Roles + Send Messages, then `/setup` to create Spoiler-OK. Add `/countdown set` and `/faq` as needed.",
+      "`npm start`, invite with Manage Roles + Send Messages + Use Application Commands, then `/setup` → `/countdown set` → `/faq` → `/tip show`.",
   },
   {
     step: 5,
-    title: "Toggle modules from the dashboard",
+    title: "Wire the landing invite button",
     detail:
-      "Use the on-site dashboard to preview FAQ replies and module toggles. Connect Discord OAuth and Stripe when you are ready to go live.",
+      "On Vercel set NEXT_PUBLIC_DISCORD_CLIENT_ID (same as CLIENT_ID) so “Add to Discord” opens the real OAuth link. Optional: NEXT_PUBLIC_DISCORD_INVITE_URL.",
   },
 ];

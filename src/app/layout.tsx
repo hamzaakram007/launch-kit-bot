@@ -14,10 +14,11 @@ const figtree = Figtree({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = "https://bot.neongulf.com";
-const title = "Launch Kit Bot — Neutral Discord launch-server kit";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://bot.neongulf.com";
+const title = "Launch Kit Bot — Add Discord launch helpers | NeonGulf";
 const description =
-  "NeonGulf Discord launch kit for gaming servers: spoiler roles, FAQ buttons, tip-of-day, countdown, and scam-link warnings. Free tier + $9/mo per server. Independent — no publisher IP.";
+  "Add Launch Kit Bot to Discord: /setup spoiler roles, /faq buttons, /countdown, /tip of the day. Neutral gaming-server kit by NeonGulf. Free tier + $9/mo per server. No publisher IP.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -29,15 +30,18 @@ export const metadata: Metadata = {
   applicationName: "Launch Kit Bot",
   authors: [{ name: "Hamza Akram", url: "https://github.com/hamzaakram007" }],
   creator: "Hamza Akram",
+  publisher: "NeonGulf",
   keywords: [
     "Discord bot",
+    "Add to Discord",
     "launch kit",
-    "gaming server",
+    "gaming server bot",
     "spoiler roles",
     "FAQ buttons",
     "countdown bot",
-    "scam link warning",
+    "tip of the day",
     "Discord SaaS",
+    "NeonGulf",
     "server moderation",
   ],
   alternates: {
@@ -47,7 +51,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Launch Kit Bot",
+    siteName: "Launch Kit Bot · NeonGulf",
     title,
     description,
   },
@@ -72,6 +76,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     operatingSystem: "Web, Discord",
     description,
     url: siteUrl,
+    brand: {
+      "@type": "Brand",
+      name: "NeonGulf",
+    },
     author: {
       "@type": "Person",
       name: "Hamza Akram",
@@ -83,7 +91,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         name: "Free",
         price: "0",
         priceCurrency: "USD",
-        description: "Countdown + 1 FAQ button",
+        description: "Countdown + 1 FAQ + /setup",
       },
       {
         "@type": "Offer",
